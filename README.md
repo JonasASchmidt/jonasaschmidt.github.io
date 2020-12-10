@@ -1,2 +1,2 @@
 # jonasaschmidt.github.io
-Jonas' git account testpage.
+Jonas A. Schmidts github account test page.

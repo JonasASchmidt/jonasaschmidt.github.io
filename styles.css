@@ -1,0 +1,70 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+.section-image {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
+}
+.sentence {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  align-content: flex-start;
+  -webkit-box-pack: top;
+  justify-content: top;
+  width: 25vw;
+  max-width: 90vw;
+  height: 25vw;
+  max-height: 90vh;
+  margin: auto;
+  text-align: left;
+  color: #fff;
+  font-size: 4.2vw;
+  line-height: 1.065em;
+  text-transform: uppercase;
+  font-weight: 800;
+  border: 4px solid #fff;
+  padding: 1vw 1.3vw;
+  -webkit-transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
+  transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
+}
+@media only screen and (max-width: 768px) {
+  .sentence {
+    width: 50vw;
+    height: 50vw;
+    font-size: 8.7vw;
+    line-height: 1.033em;
+    border: 4px solid #fff;
+    padding: 1.25vw 2vw 2vw;
+  }
+}
+::-moz-selection {
+  background: #ff0;
+  color: #000;
+}
+::selection {
+  background: #ff0;
+  color: #000;
+}
+::-moz-selection {
+  background: #ff0;
+  color: #000;
+}
