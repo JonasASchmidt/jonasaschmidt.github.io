@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         }
 
         // +++ Build up HTML structure and add it to body
-        section.style = `background-image: url('https://source.unsplash.com/1600x900/?${randomKeywords}')`; // Add background image to div via inline style with url
+        section.style = `background-image:url('https://source.unsplash.com/1600x900/?${randomKeywords}')`; // Add background image to div via inline style with url
         let textnode = document.createElement("span"); // Create span for the sentence text
         textnode.classList.add("sentence"); // Add class to span
         let text = document.createTextNode(sentence); // Create a text node with the sentence
