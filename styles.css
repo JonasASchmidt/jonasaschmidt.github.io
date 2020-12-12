@@ -30,7 +30,8 @@ body {
   background-size: cover;
   overflow: hidden;
   /* scroll-snap-align: start; */
-  background: no-repeat center center; 
+  /* background: no-repeat center center fixed; 
+  background-image: none; */
   /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; */
