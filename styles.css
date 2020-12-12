@@ -16,22 +16,20 @@ body {
   font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
   flex-direction: column;
-  /* scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100%);
-  scroll-snap-type: y mandatory; */
-  /* -webkit-overflow-scrolling: touch; */
-  /* scroll-snap-stop: always; */
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-stop: always;
 }
 
 .section-image {
   display: flex;
   width: 100%;
   height: 100vh;
-  background-size: cover;
   overflow: hidden;
   /* scroll-snap-align: start; */
-  /* background: no-repeat center center fixed; 
-  background-image: none; */
+  background: none no-repeat center center fixed; 
   /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; */
