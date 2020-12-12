@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -5,30 +11,34 @@ body {
   margin: 0;
   padding: 0;
 }
-* {
-  box-sizing: border-box;
-}
+
 body {
   font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-stop: always;
+  scroll-snap-points-x: initial;
+  scroll-snap-points-y: repeat(100%);
 }
-@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
 .section-image {
-  display: -webkit-box;
+  /* display: -webkit-box; */
   display: flex;
   width: 100%;
   height: 100vh;
   background-size: cover;
   overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
+
 .sentence {
-  display: -webkit-box;
+  /* display: -webkit-box; */
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
   align-content: flex-start;
-  -webkit-box-pack: top;
   justify-content: top;
   width: 25vw;
   max-width: 90vw;
@@ -45,7 +55,9 @@ body {
   padding: 1vw 1.3vw;
   -webkit-transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
   transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
+  cursor: pointer;
 }
+
 @media only screen and (max-width: 768px) {
   .sentence {
     width: 50vw;
@@ -56,14 +68,17 @@ body {
     padding: 1.25vw 2vw 2vw;
   }
 }
+
 ::-moz-selection {
   background: #ff0;
   color: #000;
 }
+
 ::selection {
   background: #ff0;
   color: #000;
 }
+
 ::-moz-selection {
   background: #ff0;
   color: #000;

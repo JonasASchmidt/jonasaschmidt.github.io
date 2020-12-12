@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", function (event) { // Fire when DOM is loaded
+    //event.preventDefault(); // ?
 
     // Define number of sections by array of sentences
     let sentences = [
@@ -17,7 +17,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         "Don't make decisions on morphine",
         "Erstmal was bauen",
         "You are not what you feel",
-        "There is no problems but communication problems"
+        "There is no problems but communication problems",
+        "Cross the bridge when you get there",
+        "Art knock life",
+        "Read the docs"
     ];
 
     // Define keywords for unsplash random images
@@ -33,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     ];
 
     let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
-    let scrollPosition = 0;
+    let scrollPosition = 0; // Set initial scroll position
+
     // Generate image sections with sentences
     sentences.forEach((sentence) => {
         let section = document.createElement("div"); // Create a DIV node
@@ -54,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         // console.log(randomKeywords);
 
+        // Build up HTML structure and add it to body
         section.style = `background-image:url('https://source.unsplash.com/1600x900/?${randomKeywords}')`; // Add background image to div via inline style with url
         let textnode = document.createElement("span"); // Create span for the sentence text
         textnode.classList.add("sentence"); // Add class to span
@@ -62,8 +67,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         section.appendChild(textnode); // Append span as child of div
         body.appendChild(section); // Append div as child of body
 
+        // Add event listener to each sentence
         textnode.addEventListener("click", function (event) {
-            scrollPosition += window.innerHeight;
+            scrollPosition += window.innerHeight; // Set viewport height as scroll position
+
             var body = document.body,
                 html = document.documentElement;
 
@@ -89,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     behavior: "smooth"
                 });
             }
+            
         });
     });
     //console.log("DOM fully loaded and parsed");
