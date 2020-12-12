@@ -16,12 +16,13 @@ body {
   font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
   flex-direction: column;
-  scroll-snap-type: y mandatory;
   /* -webkit-overflow-scrolling: touch; */
   /* scroll-snap-stop: always; */
-  scroll-snap-points-x: initial;
+  scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100%);
-  scroll-snap-align: start;
+  scroll-snap-type: y mandatory;
+
+  /* scroll-snap-align: start; */
 }
 
 .section-image {
@@ -32,7 +33,6 @@ body {
   background-size: cover;
   overflow: hidden;
   scroll-snap-align: start;
-  /* scroll-snap-stop: always; */
 }
 
 .sentence {
