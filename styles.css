@@ -20,7 +20,7 @@ body {
   /* scroll-snap-stop: always; */
   /* scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100%); */
-  scroll-snap-type: y;
+  /* scroll-snap-type: y mandatory; */
 
   /* scroll-snap-align: start; */
 }
