@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
   flex-direction: column;
   scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
   /* scroll-snap-stop: always; */
   scroll-snap-points-x: initial;
   scroll-snap-points-y: repeat(100%);
