@@ -64,8 +64,7 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "sea",
         "fog",
         "mountain",
-        "night",
-        "lonely"
+        "night"
     ];
 
     //let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
