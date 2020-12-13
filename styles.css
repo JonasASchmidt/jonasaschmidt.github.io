@@ -27,7 +27,7 @@ body {
 
 .section-image {
   display: flex;
-  width: 100%;
+  width: 99.99%;
   height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
@@ -36,6 +36,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #000;
   /* justify-content: center;
   align-items: center;
   text-align: center; */
