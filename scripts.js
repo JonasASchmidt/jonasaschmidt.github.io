@@ -87,9 +87,9 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         // console.log(randomKeywords);
         let imageSize = "1600x900"; // Standard desktop size approved standard size
         if (window.innerWidth < window.innerHeight) {
-            imageSize = (window.innerHeight*2) + "x" + (window.innerHeight*2); // Define image size as square of longer edge
+            imageSize = (window.innerHeight * 2) + "x" + (window.innerHeight * 2); // Define image size as square of longer edge
         } else {
-            imageSize = (window.innerWidth*2) + "x" + (window.innerWidth*2); // Define image size as square of longer edge
+            imageSize = (window.innerWidth * 2) + "x" + (window.innerWidth * 2); // Define image size as square of longer edge
         }
         // imageSize = window.innerWidth + "x" + window.innerHeight; // Define image size matching the viewport dimensions
         // +++ Build up HTML structure and add it to body
@@ -105,8 +105,7 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         // textnode.addEventListener("click", function (event) {
         //     scrollPosition += window.innerHeight; // Set viewport height as scroll position
 
-        //     var body = document.body,
-        //         html = document.documentElement;
+        //     var body = document.body, html = document.documentElement;
 
         //     var height = Math.max(
         //         body.scrollHeight,
@@ -140,11 +139,12 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         //             top: 0,
         //             behavior: "smooth"
         //         });
-                
+
         //         scrollPosition = 0;
 
         //     });
         // }
+        
     });
 
     // Lazy load CSS background images
