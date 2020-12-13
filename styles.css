@@ -32,9 +32,9 @@ body {
   /* background-image: none; */
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: cover;
   background-attachment: fixed;
 }
@@ -45,9 +45,9 @@ body {
   align-content: flex-start;
   justify-content: top;
   width: 25vw;
-  max-width: 80vw;
+  max-width: 66vw;
   height: 25vw;
-  max-height: 80vh;
+  max-height: 66vh;
   margin: auto;
   text-align: left;
   color: #fff;
