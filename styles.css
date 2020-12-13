@@ -29,14 +29,14 @@ body {
   height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
-  /* background: none no-repeat center center fixed;
-  background-image: none; */
+  /* background-image: none; */
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .sentence {

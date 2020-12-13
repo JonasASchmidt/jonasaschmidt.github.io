@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "mountain"
     ];
 
-    let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
+    //let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
     let scrollPosition = 0; // Set initial scroll position
 
     // +++ Generate image sections with sentences
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         let text = document.createTextNode(sentence); // Create a text node with the sentence
         textnode.appendChild(text); // Append text as child of span
         section.appendChild(textnode); // Append span as child of div
-        body.appendChild(section); // Append div as child of body
+        document.body.appendChild(section); // Append div as child of body
 
         // +++ Add event listener to each sentence
         // textnode.addEventListener("click", function (event) {
