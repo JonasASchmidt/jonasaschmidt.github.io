@@ -27,8 +27,8 @@ body {
 
 .section-image {
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   scroll-snap-align: center;
   /* scroll-snap-stop: always; */
@@ -36,7 +36,10 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-attachment: fixed;
 }
 
 .sentence {
@@ -59,7 +62,7 @@ body {
   padding: 1vw 1.3vw;
   -webkit-transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
   transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 @media only screen and (max-width: 768px) {
