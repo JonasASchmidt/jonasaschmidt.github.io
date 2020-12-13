@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function (event) { // Execute when DOM is loaded
-    event.preventDefault(); // ???
+    // event.preventDefault(); // ???
+    //console.log("DOM fully loaded and parsed");
 
     // Disable scroll to top on iOS-Devices.
-    document.ontouchmove = function(event){
+    document.ontouchmove = function (event) {
         event.preventDefault();
     }
 
@@ -78,14 +79,16 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
     sentences.forEach((sentence, idx) => {
 
         let section = document.createElement("div"); // Create a DIV node
-        section.classList.add("section-image"); // Add class to div
+        section.classList.add("section-image", "lazy"); // Add class(es) to div
+        // section.id = "section-image"; // Add id to div
 
         // shuffle(keywords);
         randomKeywords = getRandom(keywords, 3).join();
-        console.log(randomKeywords);
-
+        // console.log(randomKeywords);
+        let imageSize = "1600x900"; // Standard desktop size approved standard size
+        imageSize = window.innerWidth + "x" + window.innerHeight; // Define image size matchong the viewport dimensions
         // +++ Build up HTML structure and add it to body
-        section.style = `background-image:url('https://source.unsplash.com/1600x900/?${randomKeywords}')`; // Add background image to div via inline style with url
+        section.style = `background-image:url('https://source.unsplash.com/${imageSize}/?${randomKeywords}')`; // Add background image to div via inline style with url
         let textnode = document.createElement("span"); // Create span for the sentence text
         textnode.classList.add("sentence"); // Add class to span
         let text = document.createTextNode(sentence); // Create a text node with the sentence
@@ -135,5 +138,53 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
             });
         }
     });
-    //console.log("DOM fully loaded and parsed");
+
+    // Lazy load CSS background images
+
+    var lazyloadImages;
+
+    if ("IntersectionObserver" in window) {
+        lazyloadImages = document.querySelectorAll(".lazy");
+        var imageObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var image = entry.target;
+                    image.classList.remove("lazy");
+                    imageObserver.unobserve(image);
+                }
+            });
+        });
+
+        lazyloadImages.forEach(function (image) {
+            imageObserver.observe(image);
+        });
+    } else {
+        var lazyloadThrottleTimeout;
+        lazyloadImages = document.querySelectorAll(".lazy");
+
+        function lazyload() {
+            if (lazyloadThrottleTimeout) {
+                clearTimeout(lazyloadThrottleTimeout);
+            }
+
+            lazyloadThrottleTimeout = setTimeout(function () {
+                var scrollTop = window.pageYOffset;
+                lazyloadImages.forEach(function (entry) {
+                    if (entry.offsetTop < (window.innerHeight + scrollTop)) {
+                        var image = entry.target;
+                        image.classList.remove("lazy");
+                    }
+                });
+                if (lazyloadImages.length == 0) {
+                    document.removeEventListener("scroll", lazyload);
+                    window.removeEventListener("resize", lazyload);
+                    window.removeEventListener("orientationChange", lazyload);
+                }
+            }, 20);
+        }
+
+        document.addEventListener("scroll", lazyload);
+        window.addEventListener("resize", lazyload);
+        window.addEventListener("orientationChange", lazyload);
+    }
 });
