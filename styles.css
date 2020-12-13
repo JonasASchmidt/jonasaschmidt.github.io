@@ -31,9 +31,11 @@ body {
   scroll-snap-align: start;
   /* background: none no-repeat center center fixed;
   background-image: none; */
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
