@@ -16,11 +16,9 @@ body {
   font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
   flex-direction: column;
-  /* scroll-snap-type: mandatory; */
-  scroll-snap-type: auto;
+  scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100%);
-  /* scroll-snap-type: y mandatory; */
-  scroll-snap-type: y auto;
+  scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
   /* justify-content: center;
   align-items: center;
@@ -34,7 +32,6 @@ body {
   overflow: hidden;
   scroll-snap-align: start;
   /* scroll-snap-stop: always; */
-  /* background-image: none; */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
