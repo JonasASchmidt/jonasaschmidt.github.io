@@ -28,7 +28,7 @@ body {
 .section-image {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -36,10 +36,10 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  justify-content: center;
+  /* justify-content: center;
   align-items: center;
-  text-align: center;
-  /* background-attachment: fixed; // Not working on iOS !!! Fucks up images. */
+  text-align: center; */
+  /* background-attachment: fixed; // Not working on iOS, fucks up images! */
 }
 
 .sentence {
