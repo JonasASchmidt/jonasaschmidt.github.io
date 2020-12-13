@@ -29,7 +29,8 @@ body {
   height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
-  background: no-repeat center center; 
+  /* background: none no-repeat center center fixed;
+  background-image: none; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
