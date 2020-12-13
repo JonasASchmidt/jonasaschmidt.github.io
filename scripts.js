@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) { // Execute when DOM is loaded
-    // event.preventDefault(); // ???
+    event.preventDefault(); // ???
     //console.log("DOM fully loaded and parsed");
 
     // Disable scroll to top on iOS-Devices.
@@ -130,11 +130,13 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         // +++ Add event listener to last sentence
         if (idx === (sentences.length - 1)) {
             textnode.addEventListener("click", function (event) {
+
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
                 scrollPosition = 0;
+
             });
         }
     });
@@ -142,15 +144,24 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
     // Lazy load CSS background images
 
     var lazyloadImages;
-
-    if ("IntersectionObserver" in window) {
+    let checkdIdx = 0;
+    if ("IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) {
         lazyloadImages = document.querySelectorAll(".lazy");
         var imageObserver = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(function (entry) {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
+                    // console.log("Intersecting");
                     var image = entry.target;
+                    // console.log(image);
                     image.classList.remove("lazy");
                     imageObserver.unobserve(image);
+                    checkdIdx += 1;
+                    if (checkdIdx < lazyloadImages.length) {
+                        var nextImage = lazyloadImages[checkdIdx];
+                        // console.log(nextImage);
+                        nextImage.classList.remove("lazy");
+                        // imageObserver.unobserve(nextImage);
+                    }
                 }
             });
         });
