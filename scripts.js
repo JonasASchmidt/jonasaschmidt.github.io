@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
                     top: 0,
                     behavior: "smooth"
                 });
+                
                 scrollPosition = 0;
 
             });

@@ -16,9 +16,11 @@ body {
   font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
   flex-direction: column;
-  scroll-snap-type: mandatory;
+  /* scroll-snap-type: mandatory; */
+  scroll-snap-type: auto;
   scroll-snap-points-y: repeat(100%);
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y auto;
   -webkit-overflow-scrolling: touch;
   /* justify-content: center;
   align-items: center;
