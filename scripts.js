@@ -133,18 +133,18 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         // });
 
         // +++ Add event listener to last sentence
-        if (idx === (sentences.length - 1)) {
-            textnode.addEventListener("click", function (event) {
+        // if (idx === (sentences.length - 1)) {
+        //     textnode.addEventListener("click", function (event) {
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+        //         window.scrollTo({
+        //             top: 0,
+        //             behavior: "smooth"
+        //         });
                 
-                scrollPosition = 0;
+        //         scrollPosition = 0;
 
-            });
-        }
+        //     });
+        // }
     });
 
     // Lazy load CSS background images
