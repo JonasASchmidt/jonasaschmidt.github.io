@@ -16,6 +16,21 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         }
     }
 
+    // Define function to get a number n of random elements from an array
+    function getRandom(arr, n) {
+        var result = new Array(n),
+            len = arr.length,
+            taken = new Array(len);
+        if (n > len)
+            throw new RangeError("getRandom: more elements taken than available");
+        while (n--) {
+            var x = Math.floor(Math.random() * len);
+            result[n] = arr[x in taken ? taken[x] : x];
+            taken[x] = --len in taken ? taken[len] : len;
+        }
+        return result;
+    }
+
     // Define number of sections by array of sentences
     let sentences = [
         "Leisure is the mother of Philosophy",
@@ -48,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "sky",
         "sea",
         "fog",
-        "lonely",
         "mountain",
-        "winter"
+        "night",
+        "lonely"
     ];
 
     //let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
@@ -62,16 +77,8 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         let section = document.createElement("div"); // Create a DIV node
         section.classList.add("section-image"); // Add class to div
 
-        let randomKeywords = ""; // Create variable for random image keywords
-
-        for (let i = 0; i < 3; i++) {
-            let randomKeyword = keywords[Math.floor(Math.random() * keywords.length)]; // Get random keyword from array
-            if (randomKeywords === "") { // If not adding the first keyword
-                randomKeywords = randomKeyword; // Reassign keyword (1st) to keywords variable
-            } else {
-                randomKeywords += "," + randomKeyword; // Add , + keyword to keywords variable
-            }
-        }
+        let randomKeywords = getRandom(keywords, 3).join();
+        console.log(randomKeywords);
 
         // +++ Build up HTML structure and add it to body
         section.style = `background-image:url('https://source.unsplash.com/1600x900/?${randomKeywords}')`; // Add background image to div via inline style with url
