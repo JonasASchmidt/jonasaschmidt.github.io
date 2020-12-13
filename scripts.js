@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
 
         let section = document.createElement("div"); // Create a DIV node
         section.classList.add("section-image"); // Add class to div
+
         let randomKeywords = ""; // Create variable for random image keywords
 
         for (let i = 0; i < 3; i++) {
             let randomKeyword = keywords[Math.floor(Math.random() * keywords.length)]; // Get random keyword from array
-            if (i === 0) { // If not adding the first keyword
+            if (randomKeywords === "") { // If not adding the first keyword
                 randomKeywords = randomKeyword; // Reassign keyword (1st) to keywords variable
-
             } else {
                 randomKeywords += "," + randomKeyword; // Add , + keyword to keywords variable
             }
