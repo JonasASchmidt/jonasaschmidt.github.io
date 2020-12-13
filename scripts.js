@@ -73,14 +73,15 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
 
     //let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
     let scrollPosition = 0; // Set initial scroll position
-
+    let randomKeywords = "";
     // +++ Generate image sections with sentences
     sentences.forEach((sentence, idx) => {
 
         let section = document.createElement("div"); // Create a DIV node
         section.classList.add("section-image"); // Add class to div
 
-        let randomKeywords = getRandom(keywords, 3).join();
+        // shuffle(keywords);
+        randomKeywords = getRandom(keywords, 3).join();
         console.log(randomKeywords);
 
         // +++ Build up HTML structure and add it to body
