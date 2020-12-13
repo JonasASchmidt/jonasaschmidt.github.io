@@ -1,6 +1,21 @@
 document.addEventListener("DOMContentLoaded", function (event) { // Execute when DOM is loaded
     //event.preventDefault(); // ?
 
+
+    // Define shuffle function for arrays according to Fisher-Yates 
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+
+            // swap elements array[i] and array[j]
+            // we use "destructuring assignment" syntax to achieve that
+            // you'll find more details about that syntax in later chapters
+            // same can be written as:
+            // let t = array[i]; array[i] = array[j]; array[j] = t
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
     // Define number of sections by array of sentences
     let sentences = [
         "Leisure is the mother of Philosophy",
@@ -23,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "Read the docs"
     ];
 
+    shuffle(sentences);
+
     // Define keywords for unsplash random images
     let keywords = [
         "calm",
@@ -32,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "sea",
         "fog",
         "lonely",
-        "mountain"
+        "mountain",
+        "winter"
     ];
 
     //let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
@@ -96,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         // });
 
         // +++ Add event listener to last sentence
-        if ( idx === (sentences.length - 1) ) {
+        if (idx === (sentences.length - 1)) {
             textnode.addEventListener("click", function (event) {
                 window.scrollTo({
                     top: 0,
