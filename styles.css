@@ -6,7 +6,7 @@
 
 html,
 body {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   margin: 0;
   padding: 0;
@@ -20,9 +20,9 @@ body {
   scroll-snap-points-y: repeat(100%);
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
-  justify-content: center;
+  /* justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .section-image {
