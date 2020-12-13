@@ -86,7 +86,12 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         randomKeywords = getRandom(keywords, 3).join();
         // console.log(randomKeywords);
         let imageSize = "1600x900"; // Standard desktop size approved standard size
-        imageSize = window.innerWidth + "x" + window.innerHeight; // Define image size matchong the viewport dimensions
+        if (window.innerWidth < window.innerHeight) {
+            imageSize = (window.innerHeight*2) + "x" + (window.innerHeight*2); // Define image size as square of longer edge
+        } else {
+            imageSize = (window.innerWidth*2) + "x" + (window.innerWidth*2); // Define image size as square of longer edge
+        }
+        // imageSize = window.innerWidth + "x" + window.innerHeight; // Define image size matching the viewport dimensions
         // +++ Build up HTML structure and add it to body
         section.style = `background-image:url('https://source.unsplash.com/${imageSize}/?${randomKeywords}')`; // Add background image to div via inline style with url
         let textnode = document.createElement("span"); // Create span for the sentence text
