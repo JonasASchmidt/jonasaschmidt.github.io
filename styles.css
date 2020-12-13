@@ -32,9 +32,6 @@ body {
   /* background-image: none; */
   background-position: center center;
   background-repeat: no-repeat;
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; */
   background-size: cover;
   /* background-attachment: fixed; */
 }
@@ -59,7 +56,7 @@ body {
   padding: 1vw 1.3vw;
   -webkit-transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
   transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
