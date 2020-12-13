@@ -20,7 +20,7 @@ body {
   scroll-snap-points-y: repeat(100%);
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-stop: always;
+  /* scroll-snap-stop: always; */
 }
 
 .section-image {
@@ -29,13 +29,13 @@ body {
   height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* scroll-snap-stop: always; */
   /* background-image: none; */
-  /* background-position: center center; */
-  /* background-repeat: no-repeat; */
-  -webkit-background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: cover;
   /* background-attachment: fixed; */
 }
