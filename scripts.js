@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function (event) { // Execute when DOM is loaded
-    //event.preventDefault(); // ?
+    event.preventDefault(); // ???
 
+    // Disable scroll to top on iOS-Devices.
+    document.ontouchmove = function(event){
+        event.preventDefault();
+    }
 
     // Define shuffle function for arrays according to Fisher-Yates 
     function shuffle(array) {
