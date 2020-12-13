@@ -29,7 +29,7 @@ body {
   height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
-  background: none no-repeat center center fixed; 
+  background: no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -56,7 +56,7 @@ body {
   padding: 1vw 1.3vw;
   -webkit-transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
   transition: border 0.22s, font-size 0.22s, width 0.22s, height 0.22s;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 @media only screen and (max-width: 768px) {
