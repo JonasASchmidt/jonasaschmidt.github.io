@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function (event) { // Execute when DOM is loaded
+    // addEventListener("load", function() { setTimeout( hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); };
     event.preventDefault(); // ???
     //console.log("DOM fully loaded and parsed");
 
     // Disable scroll to top on iOS-Devices.
-    document.ontouchmove = function (event) {
-        event.preventDefault();
-    }
+    // document.ontouchmove = function (event) {
+    //     event.preventDefault();
+    // }
 
     // Define shuffle function for arrays according to Fisher-Yates 
     function shuffle(array) {
