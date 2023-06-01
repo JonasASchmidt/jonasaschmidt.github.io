@@ -56,7 +56,10 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "There is no problems but communication problems",
         "Cross the bridge when you get there",
         "Art knock life",
-        "Read the docs"
+        "Read the docs",
+        "Visualize Everything",
+        "Solve complexity by intuition",
+        "Always stay human"
     ];
 
     shuffle(sentences);
