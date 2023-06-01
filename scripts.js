@@ -59,7 +59,10 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "Read the docs",
         "Visualize Everything",
         "Solve complexity by intuition",
-        "Always stay human"
+        "Always stay human",
+        "It always depends", 
+        "If it‘s worth it, it‘s worth it.",
+        "Hell yeah, or no!"
     ];
 
     shuffle(sentences);
