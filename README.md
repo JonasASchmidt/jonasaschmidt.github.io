@@ -1,2 +1,2 @@
 # jonasaschmidt.github.io
-Jonas A. Schmidts github account test page fille with life sentences. :-)
+Jonas A. Schmidts github account test page filled with life sentences. :-)

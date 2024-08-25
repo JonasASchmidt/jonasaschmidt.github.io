@@ -6,29 +6,34 @@
 
 html,
 body {
-  /* width: 100%; */
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
+  font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-body {
-  font-family: "Libre Franklin", "Helvetica Neue", Helvetica, sans-serif;
-  overflow-x: hidden;
+.container {
+  /* border: 1px solid red; */
+  display: flex;
   flex-direction: column;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100%);
+  max-height: 100vh;
+  /* position: fixed; */
+  /* overflow-x: hidden; */
+  overflow-y: scroll;
+  /* scroll-snap-type: mandatory; */
   scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
   /* justify-content: center;
   align-items: center;
   text-align: center; */
 }
 
 .section-image {
+  /* border: 1px solid green; */
   display: flex;
-  width: 100%;
-  height: 100vh;
+  flex-direction: column;
+  /* width: 100%; */
+  min-height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -36,8 +41,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #000;
-  /* justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center;
   text-align: center; */
   /* background-attachment: fixed; // Not working on iOS, fucks up images! */
 }

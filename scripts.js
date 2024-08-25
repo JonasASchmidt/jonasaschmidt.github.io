@@ -1,6 +1,18 @@
+// import { createApi } from 'https://cdn.jsdelivr.net/npm/unsplash-js/dist/unsplash-js.esm.min.js';
+// import * as nodeFetch from 'https://cdn.jsdelivr.net/npm/node-fetch/src/index.min.js';
+
+// const unsplash = createApi({
+//     accessKey: 'MY_ACCESS_KEY',
+//     fetch: nodeFetch.default as unknown as typeof fetch,
+// });
+
+// import unsplashJs from 'https://cdn.jsdelivr.net/npm/unsplash-js/dist/unsplash-js.esm.min.js'
+
+const unsplash_js = require('http://web-module.location');
+
 document.addEventListener("DOMContentLoaded", function (event) { // Execute when DOM is loaded
-    // addEventListener("load", function() { setTimeout( hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); };
     event.preventDefault(); // ???
+    // addEventListener("load", function() { setTimeout( hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); };
     //console.log("DOM fully loaded and parsed");
 
     // Disable scroll to top on iOS-Devices.
@@ -15,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
 
             // swap elements array[i] and array[j]
             // we use "destructuring assignment" syntax to achieve that
-            // you'll find more details about that syntax in later chapters
             // same can be written as:
             // let t = array[i]; array[i] = array[j]; array[j] = t
             [array[i], array[j]] = [array[j], array[i]];
@@ -79,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         "night"
     ];
 
-    //let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
-    let scrollPosition = 0; // Set initial scroll position
+    // let body = document.querySelector("body"); // Define variable body as pointer to <body> element.
+    // let scrollPosition = 0; // Set initial scroll position
     let randomKeywords = "";
     // +++ Generate image sections with sentences
     sentences.forEach((sentence, idx) => {
@@ -92,13 +103,17 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         // shuffle(keywords);
         randomKeywords = getRandom(keywords, 3).join();
         // console.log(randomKeywords);
-        let imageSize = "1600x900"; // Standard desktop size approved standard size
-        if (window.innerWidth < window.innerHeight) {
-            imageSize = (window.innerHeight * 2) + "x" + (window.innerHeight * 2); // Define image size as square of longer edge
-        } else {
-            imageSize = (window.innerWidth * 2) + "x" + (window.innerWidth * 2); // Define image size as square of longer edge
-        }
-        // imageSize = window.innerWidth + "x" + window.innerHeight; // Define image size matching the viewport dimensions
+
+        // let imageSize = "1600x900"; // Standard desktop size approved standard size
+        // if (window.innerWidth < window.innerHeight) {
+        //     imageSize = (window.innerHeight * 2) + "x" + (window.innerHeight * 2); // Define image size as square of longer edge
+        // } else {
+        //     imageSize = (window.innerWidth * 2) + "x" + (window.innerWidth * 2); // Define image size as square of longer edge
+        // }
+
+        // console.log(imageSize);
+
+        imageSize = window.innerWidth + "x" + window.innerHeight; // Define image size matching the viewport dimensions
         // +++ Build up HTML structure and add it to body
         section.style = `background-image:url('https://source.unsplash.com/${imageSize}/?${randomKeywords}')`; // Add background image to div via inline style with url
         let textnode = document.createElement("span"); // Create span for the sentence text
@@ -106,7 +121,10 @@ document.addEventListener("DOMContentLoaded", function (event) { // Execute when
         let text = document.createTextNode(sentence); // Create a text node with the sentence
         textnode.appendChild(text); // Append text as child of span
         section.appendChild(textnode); // Append span as child of div
-        document.body.appendChild(section); // Append div as child of body
+
+        let container = document.querySelector('container');
+        // console.log(container);
+        container.appendChild(section); // Append div as child of body
 
         // +++ Add event listener to each sentence
         // textnode.addEventListener("click", function (event) {
